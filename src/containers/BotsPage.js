@@ -26,20 +26,21 @@ class BotsPage extends React.Component {
   enlist=(id)=>{
     let enlisted = this.state.bots.find(bot=>{return bot.id===id})
     let army = this.state.armyBots
-    if (army.includes(enlisted)) {
-      let index = army.indexOf(enlisted)
-      army.splice(index, 1)
-      this.setState({
-        armyBots: [...army],
-        clicked: !this.state.clicked
-      })
-    } else {
-      this.setState({
-        armyBots: [...army, enlisted],
-        clicked: !this.state.clicked
-      })
+
+      if (army.includes(enlisted)) {
+        let index = army.indexOf(enlisted)
+        army.splice(index, 1)
+        this.setState({
+          armyBots: [...army],
+          clicked: !this.state.clicked
+        })
+      } else {
+        this.setState({
+          armyBots: [...army, enlisted],
+          clicked: !this.state.clicked
+        })
+      }
     }
-  }
 
 
   clickedOn=(id)=>{
