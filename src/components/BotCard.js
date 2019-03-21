@@ -2,7 +2,7 @@ import React from "react";
 
 const BotCard = (props) => {
 
-  const clickRobot = () => {
+  const clickRobot = (e) => {
     props.handleClick(props.bot)
   }
   const { bot } = props
