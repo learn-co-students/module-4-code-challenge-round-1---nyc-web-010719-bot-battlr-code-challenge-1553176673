@@ -1,7 +1,7 @@
 import React from "react";
 
-const BotCard = props => {
-  const { bot } = props;
+const BotCard = (props) => {
+  const { bot } = props
 
   let botType;
 
@@ -20,6 +20,7 @@ const BotCard = props => {
   }
 
   return (
+
     <div className="ui column">
       <div
         className="ui card"
