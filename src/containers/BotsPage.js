@@ -7,7 +7,8 @@ class BotsPage extends React.Component {
 
   state = {
     robots: [],
-    selectedBots: []
+    selectedBots: [],
+    selectedBot: ""
   }
 
   componentDidMount(){
@@ -15,7 +16,8 @@ class BotsPage extends React.Component {
     .then(r=> r.json())
     .then(robots => {
       this.setState({
-        robots: robots
+        robots: robots,
+        allRobots: robots
       })
     })
   }
@@ -28,6 +30,10 @@ class BotsPage extends React.Component {
         selectedBots: newSelectedBots
       })
     }
+  }
+
+  showBotCard = (bot) => {
+    console.log("showing bot card")
   }
 
   render() {
