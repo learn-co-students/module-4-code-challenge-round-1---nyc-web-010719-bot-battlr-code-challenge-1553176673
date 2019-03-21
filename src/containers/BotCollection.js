@@ -5,9 +5,16 @@ class BotCollection extends React.Component {
   //your code here
 
   renderBots = () => {
-    return this.props.botArmy.map(bot => {
-      return <BotCard key={bot.id} bot={bot} addBotToArmy={this.props.addBotToArmy} parent={"BC"}/>
-    })
+    if (this.props.filtered === false) {
+      return this.props.botArmy.map(bot => {
+        return <BotCard key={bot.id} bot={bot} addBotToArmy={this.props.addBotToArmy} parent={"BC"}/>
+      })
+    } else {
+      return this.props.filterArmy.map(bot => {
+        return <BotCard key={bot.id} bot={bot} addBotToArmy={this.props.addBotToArmy} parent={"BC"}/>
+      })
+    }
+
   }
 
   render(){
