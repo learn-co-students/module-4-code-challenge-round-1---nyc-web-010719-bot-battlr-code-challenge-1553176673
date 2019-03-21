@@ -6,12 +6,20 @@ class App extends Component {
   state = {
     bots: [],
     myBots: [],
+    display: 'collection',
+    selectedBot: null,
   };
 
   componentDidMount() {
     fetch('https://bot-battler-api.herokuapp.com/api/v1/bots')
     .then(r => r.json())
     .then(bots => this.setState({ bots }))
+  };
+
+  renderMain = () => {
+    this.setState({
+      display: 'collection',
+    });
   };
 
   enlist = bot => {
@@ -21,6 +29,13 @@ class App extends Component {
       :
     this.setState({
       myBots: [...this.state.myBots, bot]
+    });
+  };
+
+  showDetails = bot => {
+    this.setState({
+      display: 'details',
+      selectedBot: bot,
     });
   };
 
@@ -38,14 +53,17 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.myBots)
     return (
       <div className="App">
         <BotsPage
+          display={this.state.display}
           bots={this.state.bots}
           myBots={this.state.myBots}
           enlist={bot => this.enlist(bot)}
+          showDetails={bot => this.showDetails(bot)}
           remove={bot => this.remove(bot)}
+          selectedBot={this.state.selectedBot}
+          goBack={this.renderMain}
         />
       </div>
     );

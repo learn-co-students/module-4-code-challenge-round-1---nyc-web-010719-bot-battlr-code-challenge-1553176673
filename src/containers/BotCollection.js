@@ -8,7 +8,7 @@ class BotCollection extends Component {
         <BotCard
           key={bot.id}
           bot={bot}
-          enlist={id => this.enlist(id)}
+          showDetails={id => this.showDetails(id)}
           remove={id => this.remove(id)}
           enlisted='false'
         />
@@ -16,11 +16,11 @@ class BotCollection extends Component {
     })
   };
 
-  enlist = id => {
+  showDetails = id => {
     let bot = this.props.bots.find(b => {
       return b.id === id;
     });
-    this.props.enlist(bot);
+    this.props.showDetails(bot);
   };
 
   render(){

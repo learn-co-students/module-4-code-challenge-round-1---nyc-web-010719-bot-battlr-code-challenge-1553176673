@@ -17,19 +17,19 @@ const BotCard = props => {
       break;
     default:
       botType = <div />;
-  }
+  };
 
   return (
     <div className="ui column">
       <div
         className="ui card"
-        key={bot.id} /* not sure if this is necessary anymore -- added  `key={bot.id}` to renderBots in BotCollection */
+        key={bot.id} /* curious if this is necessary anymore -- added  `key={bot.id}` to renderBots in BotCollection */
         onClick={
           props.enlisted === 'true'
             ?
           id => props.remove(bot.id)
             :
-          id => props.enlist(bot.id)
+          id => props.showDetails(bot.id)
         }
       >
         <div className="image">
@@ -62,7 +62,6 @@ const BotCard = props => {
       </div>
     </div>
   );
-
 };
 
 export default BotCard;
