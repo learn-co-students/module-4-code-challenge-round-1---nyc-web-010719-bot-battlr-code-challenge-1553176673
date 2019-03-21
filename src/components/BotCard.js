@@ -5,6 +5,10 @@ const BotCard = props => {
 
   let botType;
 
+  const localEnlist=()=>{
+    props.enlist(bot.id)
+  }
+
   switch (bot.bot_class) {
     case "Assault":
       botType = <i className="icon military" />;
@@ -24,7 +28,7 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => console.log("add code to connect event listener")}
+        onClick={localEnlist}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
