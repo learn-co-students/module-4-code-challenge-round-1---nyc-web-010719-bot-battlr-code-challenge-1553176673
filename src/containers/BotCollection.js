@@ -11,6 +11,7 @@ class BotCollection extends React.Component {
   }
 
   render(){
+    console.log(this.props)
   	return (
   	  <div className="ui four column grid">
     		<div className="row">

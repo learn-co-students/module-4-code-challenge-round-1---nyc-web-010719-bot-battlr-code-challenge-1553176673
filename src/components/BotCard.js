@@ -3,6 +3,8 @@ import React from "react";
 const BotCard = props => {
   const { bot } = props;
 
+  console.log(bot)
+
   let botType;
 
   const localEnlist=()=>{

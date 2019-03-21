@@ -20,23 +20,35 @@ class BotsPage extends React.Component {
     this.fetchBots()
   }
 
+
+
   enlist=(id)=>{
     let enlisted = this.state.bots.find(bot=>{return bot.id===id})
     let bots = this.state.bots
-    let index = this.state.bots.indexOf(enlisted)
     let army = this.state.armyBots
-    // bots.splice(index, 1, enlisted)
+
+    if (army.includes(enlisted)) {
+    let index = army.indexOf(enlisted)
+    army.splice(index, 1)
+    this.setState({
+      armyBots: [...army]
+    })
+  } else {
     this.setState({
       armyBots: [...army, enlisted]
     })
-    console.log(this.state.armyBots)
+    }
+  }
+
+  remove=(id)=>{
+    console.log(id)
   }
 
   render() {
     return (
       <div>
-        <YourBotArmy armyBots={this.state.armyBots}/>
-        <BotCollection bots={this.state.bots} enlist={this.enlist}/>
+        <YourBotArmy armyBots={this.state.armyBots} enlist={this.enlist}/>
+        <BotCollection bots={this.state.bots} enlist={this.enlist} />
       </div>
     );
   }
