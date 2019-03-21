@@ -71,13 +71,15 @@ const BotSpecs = props => {
             {(props.armyBots.includes(bot)) ?
               <button
                 className="ui button fluid"
-                onClick={localEnlist}>
+                onClick={localEnlist}
+                >
                 Dismiss
               </button>
               :
             <button
               className="ui button fluid"
-              onClick={localEnlist}>
+              onClick={localEnlist}
+              >
               Enlist
             </button>
             }

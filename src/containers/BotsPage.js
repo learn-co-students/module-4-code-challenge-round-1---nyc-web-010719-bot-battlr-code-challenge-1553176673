@@ -5,7 +5,6 @@ import BotSpecs from '../components/BotSpecs'
 
 
 class BotsPage extends React.Component {
-  //start here with your code for step one
 
   state={
     bots:[],
@@ -31,7 +30,8 @@ class BotsPage extends React.Component {
       let index = army.indexOf(enlisted)
       army.splice(index, 1)
       this.setState({
-        armyBots: [...army]
+        armyBots: [...army],
+        clicked: !this.state.clicked
       })
     } else {
       this.setState({
