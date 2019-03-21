@@ -51,9 +51,7 @@ class BotsPage extends React.Component {
       return <BotCollection bots={this.state.bots} enlistBot={this.enlistBot}
         renderSpecs={this.renderSpecs} changeSpec={this.changeSpec}/>
     } else {
-      let bot = this.state.bots.find(b => b.id == id)
-      debugger
-      return <BotSpecs bot={bot.id} enlistBot={this.enlistBot}
+      return <BotSpecs bot={this.state.selected} enlistBot={this.enlistBot}
         changeSpec={this.changeSpec}/>
     }
   }
