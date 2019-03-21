@@ -1,13 +1,16 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
+import BotCollection from './BotCollection';
+import YourBotArmy from './YourBotArmy';
 
-class BotsPage extends React.Component {
+class BotsPage extends Component {
   //start here with your code for step one
 
   render() {
     return (
-      <div>
-        {/* put your components here */}
-      </div>
+      <Fragment>
+        <BotCollection bots={this.props.bots} />
+        <YourBotArmy />
+      </Fragment>
     );
   }
 
