@@ -8,7 +8,7 @@ class BotsPage extends React.Component {
   state = {
     robots: [],
     selectedBots: [],
-    selectedBot: ""
+
   }
 
   componentDidMount(){
@@ -32,9 +32,6 @@ class BotsPage extends React.Component {
     }
   }
 
-  showBotCard = (bot) => {
-    console.log("showing bot card")
-  }
 
   render() {
     console.log(this.state)

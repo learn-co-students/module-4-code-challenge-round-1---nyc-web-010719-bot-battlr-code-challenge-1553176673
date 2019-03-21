@@ -46,6 +46,10 @@ class BotCollection extends React.Component {
   handleEnlistBot = (bot) => {
     console.log("enlisting bot")
     this.props.addBot(bot)
+    this.setState({
+      showCard: !this.state.showCard,
+      selectedBot: ""
+    })
   }
 
 
