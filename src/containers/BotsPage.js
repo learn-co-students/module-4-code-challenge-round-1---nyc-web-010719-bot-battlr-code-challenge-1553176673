@@ -11,8 +11,9 @@ class BotsPage extends React.Component {
     bots:[],
     armyBots:[],
     clicked: false,
-    currentBot:{},
+    currentBot:{}
   }
+
   fetchBots(){
     fetch('https://bot-battler-api.herokuapp.com/api/v1/bots')
     .then(r=>r.json())
@@ -22,8 +23,6 @@ class BotsPage extends React.Component {
   componentDidMount(){
     this.fetchBots()
   }
-
-
 
   enlist=(id)=>{
     let enlisted = this.state.bots.find(bot=>{return bot.id===id})
@@ -44,7 +43,6 @@ class BotsPage extends React.Component {
 
 
   clickedOn=(id)=>{
-    let bots = this.state.bots
     let currentBot = this.state.bots.find(bot=>{return bot.id===id})
     this.setState({
       clicked: !this.state.clicked,
@@ -66,7 +64,8 @@ class BotsPage extends React.Component {
             :
           <BotSpecs bot={this.state.currentBot}
             enlist={this.enlist}
-            clickedOn={this.clickedOn} />
+            clickedOn={this.clickedOn}
+            armyBots={this.state.armyBots}/>
         }
       </div>
     );
