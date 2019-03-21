@@ -1,6 +1,6 @@
 import React from "react";
 
-const BotCard = props => {
+const ArmyCard = props => {
   const { bot } = props;
 
   let botType;
@@ -19,25 +19,12 @@ const BotCard = props => {
       botType = <div />;
   }
 
-  const handleClick = () => {
-    props.changeSpec(props.bot.id)
-    // props.enlistBot(props.bot.id)
-    // props.renderSpecs(props.bot.id)
-  }
-
-  // const renderSpecs = () => {
-  //   if (handleClick) {
-  //     debugger
-  //     // return <BotSpecs />
-  //   }
-  // }
-
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bot.id}
-        onClick={handleClick}
+        onClick={() => props.unenlistBot(props.bot.id)}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
@@ -72,6 +59,6 @@ const BotCard = props => {
 
 };
 
-export default BotCard;
+export default ArmyCard;
 
 // onClick={() => console.log("add code to connect event listener")}
