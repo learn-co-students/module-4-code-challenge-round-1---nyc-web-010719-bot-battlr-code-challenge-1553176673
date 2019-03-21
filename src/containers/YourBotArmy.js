@@ -2,7 +2,7 @@ import React from "react";
 import BotCard from "../components/BotCard";
 
 class YourBotArmy extends React.Component {
-  //your bot army code here...
+
 
   render(){
     return (
@@ -19,3 +19,10 @@ class YourBotArmy extends React.Component {
 };
 
 export default YourBotArmy;
+// <form>
+// <select onChange={(e) => this.props.filter(e.target.value)}>
+//   <option value="Defender">Defender Bots</option>
+//   <option value="Support">Support Bots</option>
+//   <option value="Assault">Assault Bots</option>
+// </select>
+// </form>

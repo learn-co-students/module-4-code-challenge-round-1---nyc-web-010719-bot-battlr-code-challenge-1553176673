@@ -9,6 +9,7 @@ class BotsPage extends React.Component {
     this.state = {
       allBots: [],
       myBots: [],
+      filteredBots: [],
       botClicked: ''
     }
   }
@@ -42,10 +43,18 @@ class BotsPage extends React.Component {
     this.setState({botClicked: ''})
   }
 
+  // filter = (e) => {
+  //   let filterBots = this.state.allBots.filter(bot => bot.class == e)
+  //   debugger
+  //   this.setState({filteredBots: filterBots})
+  // }
+
+
+
   render() {
     return (
       <div>
-       <YourBotArmy myBots={this.state.myBots} handleClick={this.handleClickRemove}/>
+       <YourBotArmy myBots={this.state.myBots} handleClick={this.handleClickRemove} filter={(e) => this.filter(e)}/>
        {
          this.state.botClicked == '' ?
          <BotCollection allBots={this.state.allBots}  handleClick={this.handleInfo} />
