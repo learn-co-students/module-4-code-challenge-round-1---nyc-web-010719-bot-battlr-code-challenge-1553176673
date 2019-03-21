@@ -19,12 +19,25 @@ const BotCard = props => {
       botType = <div />;
   }
 
+  const handleClick = () => {
+    props.changeSpec(props.bot.id)
+    // props.enlistBot(props.bot.id)
+    // props.renderSpecs(props.bot.id)
+  }
+
+  // const renderSpecs = () => {
+  //   if (handleClick) {
+  //     debugger
+  //     // return <BotSpecs />
+  //   }
+  // }
+
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => props.enlistBot(props.bot.id)}
+        onClick={handleClick}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
