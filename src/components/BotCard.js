@@ -23,8 +23,14 @@ const BotCard = props => {
     <div className="ui column">
       <div
         className="ui card"
-        key={bot.id}
-        onClick={() => console.log("add code to connect event listener")}
+        key={bot.id} /* not sure if this is necessary anymore -- added  `key={bot.id}` to renderBots in BotCollection */
+        onClick={
+          props.enlisted === 'true'
+            ?
+          id => props.remove(bot.id)
+            :
+          id => props.enlist(bot.id)
+        }
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />

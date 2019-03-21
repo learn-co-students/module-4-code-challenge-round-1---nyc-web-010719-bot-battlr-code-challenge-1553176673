@@ -3,17 +3,20 @@ import BotCollection from './BotCollection';
 import YourBotArmy from './YourBotArmy';
 
 class BotsPage extends Component {
-  //start here with your code for step one
-
   render() {
     return (
       <Fragment>
-        <BotCollection bots={this.props.bots} />
-        <YourBotArmy />
+        <YourBotArmy
+          myBots={this.props.myBots}
+          remove={bot => this.props.remove(bot)}
+        />
+        <BotCollection
+          bots={this.props.bots}
+          enlist={bot => this.props.enlist(bot)}
+        />
       </Fragment>
     );
-  }
-
-}
+  };
+};
 
 export default BotsPage;
