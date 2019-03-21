@@ -1,7 +1,7 @@
 import React from "react";
 
 const BotSpecs = props => {
-  let { bot } = props;
+  let { bot, handleBackButton, handleClick} = props;
 
   let botType;
 
@@ -18,7 +18,7 @@ const BotSpecs = props => {
     default:
       botType = <div />;
   }
-
+  
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">
@@ -61,7 +61,7 @@ const BotSpecs = props => {
             <button
               className="ui button fluid"
               onClick={() =>
-                console.log('connect this to a function that shows all bots')
+                handleBackButton()
               }
             >
               Go Back
@@ -69,9 +69,7 @@ const BotSpecs = props => {
             <button
               className="ui button fluid"
               onClick={() =>
-                console.log(
-                  "connect this to a function that adds this bot to your bot army list"
-                )
+                handleClick(bot)
               }
             >
               Enlist

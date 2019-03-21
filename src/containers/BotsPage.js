@@ -22,7 +22,8 @@ class BotsPage extends React.Component {
   handleClickAdd = (e) => {
     if (!this.state.myBots.includes(e)){
       let newArr = [...this.state.myBots, e]
-      this.setState({myBots: newArr})
+      this.setState({myBots: newArr, botClicked:''})
+
     }
   }
 
@@ -33,14 +34,22 @@ class BotsPage extends React.Component {
       }
   }
 
+  handleInfo = (e) => {
+    this.setState({botClicked: e})
+  }
+
+  handleBackButton = () => {
+    this.setState({botClicked: ''})
+  }
+
   render() {
     return (
       <div>
        <YourBotArmy myBots={this.state.myBots} handleClick={this.handleClickRemove}/>
        {
          this.state.botClicked == '' ?
-         <BotCollection allBots={this.state.allBots} handleClick={this.handleClickAdd}/>
-         : <BotSpecs bot={this.state.botClicked}/>
+         <BotCollection allBots={this.state.allBots}  handleClick={this.handleInfo} />
+         : <BotSpecs bot={this.state.botClicked} handleBackButton={this.handleBackButton} handleClick={this.handleClickAdd}/>
 
      }
       </div>
