@@ -3,16 +3,18 @@ import BotCollection from "./BotCollection";
 import YourBotArmy from "./YourBotArmy";
 
 class BotsPage extends React.Component {
-  //start here with your code for step one
+  //STATE***********************************************************************
   state = {
     bots: [],
     botArmy: []
   }
 
+  //LIFECYCLE*******************************************************************
   componentDidMount(){
     this.fetchBots()
   }
 
+  //HELPER**********************************************************************
   fetchBots = () => {
     fetch("https://bot-battler-api.herokuapp.com/api/v1/bots")
     .then(res => res.json())
@@ -38,6 +40,11 @@ class BotsPage extends React.Component {
     }
   }
 
+  //change handle click to render bot specs instead in BotCollection
+  //add current handleClick functionality to enlist button
+  //goback should rerender Bot Collection 
+
+  //RENDER**********************************************************************
   render() {
     return (
       <div>

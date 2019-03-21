@@ -2,9 +2,12 @@ import React from "react";
 
 const BotCard = (props) => {
 
+  //CLICK HANDLER***************************************************************
   const clickRobot = (e) => {
     props.handleClick(props.bot)
   }
+
+  //FLATIRON CODE BELOw*********************************************************
   const { bot } = props
 
   let botType;
