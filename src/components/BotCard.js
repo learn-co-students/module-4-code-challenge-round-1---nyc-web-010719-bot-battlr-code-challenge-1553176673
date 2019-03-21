@@ -3,12 +3,10 @@ import React from "react";
 const BotCard = props => {
   const { bot } = props;
 
-  console.log(bot)
-
   let botType;
 
-  const localEnlist=()=>{
-    props.enlist(bot.id)
+  const localClick=()=>{
+    props.clickedOn(bot.id)
   }
 
   switch (bot.bot_class) {
@@ -30,7 +28,7 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={localEnlist}
+        onClick={localClick}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
