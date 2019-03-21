@@ -69,7 +69,7 @@ const BotSpecs = props => {
             <button
               className="ui button fluid"
               onClick={
-                () => props.enlist(props.bot)
+                () => props.removeBot(props.bot)
               }
             >
               Enlist
