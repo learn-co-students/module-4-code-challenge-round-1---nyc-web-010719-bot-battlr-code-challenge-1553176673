@@ -7,14 +7,13 @@ class BotCollection extends React.Component {
   //your code here
 
   state={
-    showCard: false,
     selectedBot: ""
   }
 
   renderBots = () => {
     console.log(this.state)
     // debugger
-    if(!this.state.showCard){
+    if(!this.state.selectedBot){
       return this.props.robots.map(robot => {
         return <BotCard
           key={robot.id}
@@ -38,7 +37,6 @@ class BotCollection extends React.Component {
 
   handleGoBack = () => {
     this.setState({
-      showCard: !this.state.showCard,
       selectedBot: ""
     })
   }
@@ -47,21 +45,16 @@ class BotCollection extends React.Component {
     console.log("enlisting bot")
     this.props.addBot(bot)
     this.setState({
-      showCard: !this.state.showCard,
       selectedBot: ""
     })
   }
 
-
   showCard = (bot) => {
     console.log("showing card")
     this.setState({
-      showCard: !this.state.showCard,
       selectedBot: bot
     })
   }
-
-
 
   render(){
   	return (
